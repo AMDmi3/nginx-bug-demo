@@ -46,9 +46,15 @@ Note that the second response comes with 2.23 seconds instead of expected 1.52 o
 
 See ktrace dumps [with bug](ktrace.11.2-bug.txt) [without bug](ktrace.12.x-ok.txt).
 
-The relevant difference is how kevent behaves after nginx sends the reply back to client:
+The relevant difference is how kevent behaves after nginx sends a reply back to client.
 
-Bug: https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.11.2-bug.txt#L241-L249
+When there's a bug, two events on client fd come come separately:
+WRITE with 100 msec delay (introducing its own latency) and then
+READ with additional 630 msec.
+
+https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.11.2-bug.txt#L241-L249
+
+When there's no bug, both events come at the same time and immediately:
 
 No bug: https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.12.x-ok.txt#L226-L227
 
