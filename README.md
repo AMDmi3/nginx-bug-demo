@@ -61,7 +61,10 @@ No bug: https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.12.x-ok.txt#
 ## Enviroment
 
 - OS
+  - :+1: FreeBSD 11.0-BETA1 amd54 (r302857) - does not reproduce
+  - :skull: FreeBSD 11.2-PRERELEASE amd64 (r334549)
   - :skull: FreeBSD 11.2-RELEASE-p1 amd64
+  - :skull: FreeBSD 12.0-CURRENT amd64 (r316542)
   - :skull: FreeBSD 12.0-CURRENT amd64 d71bcb11d(drm-next)
   - :+1: FreeBSD 12.0-CURRENT amd64 (r333375) - does not reproduce
   - :+1: FreeBSD 12.0-CURRENT amd64 ce438e4cdd8(master) - does not reproduce
