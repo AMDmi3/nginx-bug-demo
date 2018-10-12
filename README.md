@@ -48,6 +48,7 @@ Note that the second response comes with 2.23 seconds instead of expected 1.52 o
   - FreeBSD 11.2-RELEASE-p1 amd64
   - FreeBSD 12.0-CURRENT amd64 (from Jun 2017)`
 - nginx
+  - 1.14.0
   - 1.15.4
   - 1.15.5
 
