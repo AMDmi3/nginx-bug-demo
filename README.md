@@ -45,12 +45,14 @@ Note that the second response comes with 2.23 seconds instead of expected 1.52 o
 ## Enviroment
 
 - OS
-  - FreeBSD 11.2-RELEASE-p1 amd64
-  - FreeBSD 12.0-CURRENT amd64 (from Jun 2017)`
+  - :skull: FreeBSD 11.2-RELEASE-p1 amd64
+  - :skull: FreeBSD 12.0-CURRENT amd64 d71bcb11d(drm-next)
+  - :+1: FreeBSD 12.0-CURRENT amd64 (r333375) - does not reproduce
+  - :+1: FreeBSD 12.0-CURRENT amd64 ce438e4cdd8(master) - does not reproduce
 - nginx
-  - 1.14.0
-  - 1.15.4
-  - 1.15.5
+  - :skull: 1.14.0
+  - :skull: 1.15.4
+  - :skull: 1.15.5
 
 ## Contacts
 
