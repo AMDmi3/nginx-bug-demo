@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Uncomment to use ktrace
+#KTRACE="ktrace -di"
+
 if ! [ -e backend -a backend -nt backend.c ]; then
 	echo "===> Compiling backend simulator"
 	cc -o backend backend.c
@@ -12,7 +15,7 @@ backend_pid="$!"
 
 echo "===> Running nginx"
 
-nginx -p . -c nginx.conf >/dev/null 2>&1 &
+$KTRACE nginx -p . -c nginx.conf >/dev/null 2>&1 &
 nginx_pid="$!"
 
 echo "===> Waiting 1 sec for everybody to start"
@@ -40,3 +43,7 @@ kill "$backend_pid"
 kill "$nginx_pid"
 
 wait
+
+if [ -n "$KTRACE" ]; then
+    echo "You may run \`kdump -E\` to see the trace"
+fi
