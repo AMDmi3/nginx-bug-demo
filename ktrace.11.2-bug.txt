@@ -1,0 +1,281 @@
+ 49365 nginx    0.000000 RET   fork 0
+ 49365 nginx    0.000071 CALL  thr_self(0x802218000)
+ 49365 nginx    0.000085 RET   thr_self 0
+ 49365 nginx    0.000313 CALL  sigprocmask(SIG_SETMASK,0x8022180e8,0)
+ 49365 nginx    0.000327 RET   sigprocmask 0
+ 49365 nginx    0.000417 CALL  getpid
+ 49365 nginx    0.000429 RET   getpid 49365/0xc0d5
+ 49365 nginx    0.000626 CALL  geteuid
+ 49365 nginx    0.000638 RET   geteuid 1000/0x3e8
+ 49365 nginx    0.000649 CALL  sigprocmask(SIG_SETMASK,0x7fffffffe5b0,0)
+ 49365 nginx    0.000660 RET   sigprocmask 0
+ 49365 nginx    0.000783 CALL  kqueue
+ 49365 nginx    0.000817 RET   kqueue 7
+ 49365 nginx    0.000864 CALL  kevent(0x7,0x7080b8,0x1,0,0,0)
+ 49365 nginx    0.000895 STRU  struct kevent[] = { { ident=0x0, filter=EVFILT_USER, flags=0x21<EV_ADD|EV_CLEAR>, fflags=0, data=0, udata=0x0 } }
+ 49365 nginx    0.000929 STRU  struct kevent[] = {  }
+ 49365 nginx    0.001000 RET   kevent 0
+ 49365 nginx    0.002357 CALL  gettimeofday(0x7fffffffe5b0,0)
+ 49365 nginx    0.002380 RET   gettimeofday 0
+ 49365 nginx    0.002392 CALL  close(0x5)
+ 49365 nginx    0.002403 RET   close 0
+ 49365 nginx    0.002479 CALL  getpid
+ 49365 nginx    0.002491 RET   getpid 49365/0xc0d5
+ 49365 nginx    0.002502 CALL  __sysctl(0x7fffffffe5b0,0x4,0,0,0x80224a800,0x16)
+ 49365 nginx    0.002520 SCTL  "kern.proc.args.49365"
+ 49365 nginx    0.002534 RET   __sysctl 0
+ 49365 nginx    0.002546 CALL  kevent(0x7,0x8022a2000,0x2,0x8023005c0,0x200,0)
+ 49365 nginx    0.002556 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0x5<EV_ADD|EV_ENABLE>, fflags=0, data=0, udata=0x802346040 }
+             { ident=6, filter=EVFILT_READ, flags=0x5<EV_ADD|EV_ENABLE>, fflags=0, data=0, udata=0x8023460a8 } }
+ 49365 nginx    1.056346 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0, fflags=0, data=0x1, udata=0x802346040 } }
+ 49365 nginx    1.056466 RET   kevent 1
+ 49365 nginx    1.056590 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.056611 RET   gettimeofday 0
+ 49365 nginx    1.056623 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.056634 RET   clock_gettime 0
+ 49365 nginx    1.056978 CALL  accept4(0x4,0x7fffffffe4e0,0x7fffffffe4dc,0x20000000)
+ 49365 nginx    1.057028 STRU  struct sockaddr { AF_INET, 127.0.0.1:13144 }
+ 49365 nginx    1.057402 RET   accept4 5
+ 49365 nginx    1.057526 CALL  kevent(0x7,0x8022a2000,0x1,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.057545 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x802346110 } }
+ 49365 nginx    1.057566 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x20<EV_CLEAR>, fflags=0, data=0x4e, udata=0x802346110 } }
+ 49365 nginx    1.057576 RET   kevent 1
+ 49365 nginx    1.057587 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.057604 RET   gettimeofday 0
+ 49365 nginx    1.057613 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.057623 RET   clock_gettime 0
+ 49365 nginx    1.057657 CALL  recvfrom(0x5,0x802240400,0x400,0,0,0)
+ 49365 nginx    1.057747 GIO   fd 5 read 78 bytes
+       "GET / HTTP/1.1\r
+	Host: localhost:8080\r
+	User-Agent: curl/7.61.1\r
+	Accept: */*\r
+	\r
+       "
+ 49365 nginx    1.057768 RET   recvfrom 78/0x4e
+ 49365 nginx    1.058124 CALL  socket(PF_INET,0x1<SOCK_STREAM>,IPPROTO_IP)
+ 49365 nginx    1.058151 RET   socket 8
+ 49365 nginx    1.058163 CALL  ioctl(0x8,FIONBIO,0x7fffffffe11c)
+ 49365 nginx    1.058174 RET   ioctl 0
+ 49365 nginx    1.058200 CALL  connect(0x8,0x8022c5540,0x10)
+ 49365 nginx    1.058212 STRU  struct sockaddr { AF_INET, 127.0.0.1:8081 }
+ 49365 nginx    1.058377 RET   connect 0
+ 49365 nginx    1.058440 CALL  writev(0x8,0x7fffffffd7e0,0x1)
+ 49365 nginx    1.058522 GIO   fd 8 wrote 97 bytes
+       "GET / HTTP/1.0\r
+	Host: localhost:8081\r
+	Connection: close\r
+	User-Agent: curl/7.61.1\r
+	Accept: */*\r
+	\r
+       "
+ 49365 nginx    1.058536 RET   writev 97/0x61
+ 49365 nginx    1.058551 CALL  kevent(0x7,0x8022a2000,0x2,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.058562 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x8023633d0 }
+             { ident=8, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x802346178 } }
+ 49365 nginx    1.058577 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x8023633d0 } }
+ 49365 nginx    1.058588 RET   kevent 1
+ 49365 nginx    1.058599 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.058616 RET   gettimeofday 0
+ 49365 nginx    1.058625 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.058635 RET   clock_gettime 0
+ 49365 nginx    1.058653 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.058663 STRU  struct kevent[] = {  }
+ 49365 nginx    1.564772 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x20<EV_CLEAR>, fflags=0, data=0x32, udata=0x802346178 } }
+ 49365 nginx    1.564799 RET   kevent 1
+ 49365 nginx    1.564816 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.564829 RET   gettimeofday 0
+ 49365 nginx    1.564837 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.564844 RET   clock_gettime 0
+ 49365 nginx    1.564877 CALL  recvfrom(0x8,0x802254000,0x1000,0,0,0)
+ 49365 nginx    1.564920 GIO   fd 8 read 50 bytes
+       "HTTP/1.1 200 OK\r
+	Content-type: text/plain\r
+	\r
+	OK\r
+	\0"
+ 49365 nginx    1.564943 RET   recvfrom 50/0x32
+ 49365 nginx    1.565029 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.565039 STRU  struct kevent[] = {  }
+ 49365 nginx    1.565048 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0, udata=0x802346178 } }
+ 49365 nginx    1.565056 RET   kevent 1
+ 49365 nginx    1.565065 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.565116 RET   gettimeofday 0
+ 49365 nginx    1.565124 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.565131 RET   clock_gettime 0
+ 49365 nginx    1.565193 CALL  close(0x8)
+ 49365 nginx    1.565269 RET   close 0
+ 49365 nginx    1.565286 CALL  writev(0x5,0x7fffffffd630,0x5)
+ 49365 nginx    1.565336 GIO   fd 5 wrote 149 bytes
+       "HTTP/1.1 200 OK\r
+	Date: Fri, 12 Oct 2018 20:04:22 GMT\r
+	Content-Type: text/plain\r
+	Transfer-Encoding: chunked\r
+	Connection: keep-alive\r
+	\r
+	5\r
+	OK\r
+	\0\r
+	0\r
+	\r
+       "
+ 49365 nginx    1.565351 RET   writev 149/0x95
+ 49365 nginx    1.565398 CALL  setsockopt(0x5,IPPROTO_TCP,TCP_NODELAY,0x7fffffffe484,0x4)
+ 49365 nginx    1.565414 RET   setsockopt 0
+ 49365 nginx    1.565423 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.565431 STRU  struct kevent[] = {  }
+ 49365 nginx    1.565724 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x8023633d0 }
+             { ident=5, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0, udata=0x802346110 } }
+ 49365 nginx    1.565734 RET   kevent 2
+ 49365 nginx    1.565743 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.565755 RET   gettimeofday 0
+ 49365 nginx    1.565762 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.565769 RET   clock_gettime 0
+ 49365 nginx    1.565778 CALL  close(0x5)
+ 49365 nginx    1.565828 RET   close 0
+ 49365 nginx    1.565841 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0)
+ 49365 nginx    1.565848 STRU  struct kevent[] = {  }
+ 49365 nginx    1.591207 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0, fflags=0, data=0x1, udata=0x802346040 } }
+ 49365 nginx    1.591228 RET   kevent 1
+ 49365 nginx    1.591244 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.591258 RET   gettimeofday 0
+ 49365 nginx    1.591265 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.591273 RET   clock_gettime 0
+ 49365 nginx    1.591285 CALL  accept4(0x4,0x7fffffffe4e0,0x7fffffffe4dc,0x20000000)
+ 49365 nginx    1.591298 STRU  struct sockaddr { AF_INET, 127.0.0.1:61464 }
+ 49365 nginx    1.591306 RET   accept4 5
+ 49365 nginx    1.591330 CALL  kevent(0x7,0x8022a2000,0x1,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.591338 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x802346111 } }
+ 49365 nginx    1.591350 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x20<EV_CLEAR>, fflags=0, data=0x4e, udata=0x802346111 } }
+ 49365 nginx    1.591357 RET   kevent 1
+ 49365 nginx    1.591365 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.591377 RET   gettimeofday 0
+ 49365 nginx    1.591384 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.591391 RET   clock_gettime 0
+ 49365 nginx    1.591402 CALL  recvfrom(0x5,0x802240400,0x400,0,0,0)
+ 49365 nginx    1.591418 GIO   fd 5 read 78 bytes
+       "GET / HTTP/1.1\r
+	Host: localhost:8080\r
+	User-Agent: curl/7.61.1\r
+	Accept: */*\r
+	\r
+       "
+ 49365 nginx    1.591427 RET   recvfrom 78/0x4e
+ 49365 nginx    1.591464 CALL  socket(PF_INET6,0x1<SOCK_STREAM>,IPPROTO_IP)
+ 49365 nginx    1.591480 RET   socket 8
+ 49365 nginx    1.591488 CALL  ioctl(0x8,FIONBIO,0x7fffffffe11c)
+ 49365 nginx    1.591496 RET   ioctl 0
+ 49365 nginx    1.591504 CALL  connect(0x8,0x8022c5568,0x1c)
+ 49365 nginx    1.591548 STRU  struct sockaddr { AF_INET6, [::1]:8081 }
+ 49365 nginx    1.591633 RET   connect -1 errno 61 Connection refused
+ 49365 nginx    1.591674 CALL  write(0x3,0x7fffffffd8f0,0xfb)
+ 49365 nginx    1.591685 GIO   fd 3 wrote 251 bytes
+       "2018/10/12 23:04:22 [error] 49365#100082: *3 connect() to [::1]:8081 failed (61: Connection refused) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://[::1]:8081/", host: "localhost:8080"
+       "
+ 49365 nginx    1.591693 RET   write 251/0xfb
+ 49365 nginx    1.591701 CALL  close(0x8)
+ 49365 nginx    1.591714 RET   close 0
+ 49365 nginx    1.591723 CALL  socket(PF_INET,0x1<SOCK_STREAM>,IPPROTO_IP)
+ 49365 nginx    1.591734 RET   socket 8
+ 49365 nginx    1.591741 CALL  ioctl(0x8,FIONBIO,0x7fffffffe11c)
+ 49365 nginx    1.591749 RET   ioctl 0
+ 49365 nginx    1.591756 CALL  connect(0x8,0x8022c5540,0x10)
+ 49365 nginx    1.591764 STRU  struct sockaddr { AF_INET, 127.0.0.1:8081 }
+ 49365 nginx    1.591874 RET   connect 0
+ 49365 nginx    1.591894 CALL  writev(0x8,0x7fffffffd7e0,0x1)
+ 49365 nginx    1.591950 GIO   fd 8 wrote 97 bytes
+       "GET / HTTP/1.0\r
+	Host: localhost:8081\r
+	Connection: close\r
+	User-Agent: curl/7.61.1\r
+	Accept: */*\r
+	\r
+       "
+ 49365 nginx    1.591966 RET   writev 97/0x61
+ 49365 nginx    1.591986 CALL  kevent(0x7,0x8022a2000,0x2,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.591999 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x8023633d1 }
+             { ident=8, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x802346178 } }
+ 49365 nginx    1.592016 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x8023633d1 } }
+ 49365 nginx    1.592025 RET   kevent 1
+ 49365 nginx    1.592033 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    1.592045 RET   gettimeofday 0
+ 49365 nginx    1.592052 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    1.592059 RET   clock_gettime 0
+ 49365 nginx    1.592068 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    1.592076 STRU  struct kevent[] = {  }
+ 49365 nginx    3.098096 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0x32, udata=0x802346178 } }
+ 49365 nginx    3.098169 RET   kevent 1
+ 49365 nginx    3.098262 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    3.098276 RET   gettimeofday 0
+ 49365 nginx    3.098299 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    3.098308 RET   clock_gettime 0
+ 49365 nginx    3.098383 CALL  recvfrom(0x8,0x802254000,0x1000,0,0,0)
+ 49365 nginx    3.098417 GIO   fd 8 read 50 bytes
+       "HTTP/1.1 200 OK\r
+	Content-type: text/plain\r
+	\r
+	OK\r
+	\0"
+ 49365 nginx    3.098426 RET   recvfrom 50/0x32
+ 49365 nginx    3.098629 CALL  close(0x8)
+ 49365 nginx    3.098941 RET   close 0
+ 49365 nginx    3.099039 CALL  writev(0x5,0x7fffffffd630,0x5)
+ 49365 nginx    3.099180 GIO   fd 5 wrote 149 bytes
+       "HTTP/1.1 200 OK\r
+	Date: Fri, 12 Oct 2018 20:04:23 GMT\r
+	Content-Type: text/plain\r
+	Transfer-Encoding: chunked\r
+	Connection: keep-alive\r
+	\r
+	5\r
+	OK\r
+	\0\r
+	0\r
+	\r
+       "
+ 49365 nginx    3.099278 RET   writev 149/0x95
+ 49365 nginx    3.099332 CALL  setsockopt(0x5,IPPROTO_TCP,TCP_NODELAY,0x7fffffffe484,0x4)
+ 49365 nginx    3.099350 RET   setsockopt 0
+ 49365 nginx    3.099362 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    3.099419 STRU  struct kevent[] = {  }
+ 49365 nginx    3.194695 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x8023633d1 } }
+ 49365 nginx    3.194733 RET   kevent 1
+ 49365 nginx    3.194777 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    3.194801 RET   gettimeofday 0
+ 49365 nginx    3.194816 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    3.194830 RET   clock_gettime 0
+ 49365 nginx    3.194858 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0x7fffffffe598)
+ 49365 nginx    3.194875 STRU  struct kevent[] = {  }
+ 49365 nginx    3.835259 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0, udata=0x802346111 } }
+ 49365 nginx    3.835299 RET   kevent 1
+ 49365 nginx    3.835341 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    3.835361 RET   gettimeofday 0
+ 49365 nginx    3.835375 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    3.835387 RET   clock_gettime 0
+ 49365 nginx    3.835458 CALL  close(0x5)
+ 49365 nginx    3.835555 RET   close 0
+ 49365 nginx    3.835592 CALL  kevent(0x7,0x8022a2000,0,0x8023005c0,0x200,0)
+ 49365 nginx    3.835602 STRU  struct kevent[] = {  }
+ 49365 nginx    3.840525 STRU  struct kevent[] = { { ident=6, filter=EVFILT_READ, flags=0, fflags=0, data=0x20, udata=0x8023460a8 } }
+ 49365 nginx    3.840552 RET   kevent 1
+ 49365 nginx    3.840572 CALL  gettimeofday(0x7fffffffe4f0,0)
+ 49365 nginx    3.840598 RET   gettimeofday 0
+ 49365 nginx    3.840612 CALL  clock_gettime(0xc,0x7fffffffe520)
+ 49365 nginx    3.840625 RET   clock_gettime 0
+ 49365 nginx    3.840683 CALL  recvmsg(0x6,0x7fffffffe4b0,0)
+ 49365 nginx    3.840716 GIO   fd 6 read 32 bytes
+       0x0000 0400 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ffff ffff 0000 0000                                                                                                 |................................|
+
+ 49365 nginx    3.840731 RET   recvmsg 32/0x20
+ 49365 nginx    3.840744 CALL  recvmsg(0x6,0x7fffffffe4b0,0)
+ 49365 nginx    3.840759 RET   recvmsg -1 errno 35 Resource temporarily unavailable
+ 49365 nginx    3.841690 CALL  fstat(0,0x7fffffffe468)
+ 49365 nginx    3.841744 STRU  struct stat {dev=1895890688, ino=27, mode=020777, nlink=1, uid=80, gid=0, rdev=27, atime=1539364539, mtime=1539374664, ctime=1539374664, birthtime=-1, size=0, blksize=4096, blocks=0, flags=0x0 }
+ 49365 nginx    3.841761 RET   fstat 0
+ 49365 nginx    3.841775 CALL  fstat(0,0x7fffffffe468)
+ 49365 nginx    3.841789 STRU  struct stat {dev=1895890688, ino=27, mode=020777, nlink=1, uid=80, gid=0, rdev=27, atime=1539364539, mtime=1539374664, ctime=1539374664, birthtime=-1, size=0, blksize=4096, blocks=0, flags=0x0 }
+ 49365 nginx    3.841802 RET   fstat 0
+ 49365 nginx    3.841814 CALL  fstat(0,0x7fffffffe468)
+ 49365 nginx    3.841828 STRU  struct stat {dev=1895890688, ino=27, mode=020777, nlink=1, uid=80, gid=0, rdev=27, atime=1539364539, mtime=1539374664, ctime=1539374664, birthtime=-1, size=0, blksize=4096, blocks=0, flags=0x0 }
+ 49365 nginx    3.841840 RET   fstat 0
+ 49365 nginx    3.843105 CALL  exit(0)

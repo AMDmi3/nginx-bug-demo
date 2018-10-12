@@ -1,0 +1,242 @@
+  8049 nginx    0.000000 RET   fork 0
+  8049 nginx    0.000032 CALL  thr_self(0x8011ca000)
+  8049 nginx    0.000037 RET   thr_self 0
+  8049 nginx    0.000098 CALL  sigprocmask(SIG_SETMASK,0x8011ca0e8,0)
+  8049 nginx    0.000120 RET   sigprocmask 0
+  8049 nginx    0.000133 CALL  getpid
+  8049 nginx    0.000137 RET   getpid 8049/0x1f71
+  8049 nginx    0.000173 CALL  geteuid
+  8049 nginx    0.000176 RET   geteuid 1170/0x492
+  8049 nginx    0.000182 CALL  sigprocmask(SIG_SETMASK,0x7fffffffe5b0,0)
+  8049 nginx    0.000185 RET   sigprocmask 0
+  8049 nginx    0.000225 CALL  kqueue
+  8049 nginx    0.000231 RET   kqueue 7
+  8049 nginx    0.000247 CALL  kevent(0x7,0x344f98,0x1,0,0,0)
+  8049 nginx    0.000251 STRU  struct kevent[] = { { ident=0x0, filter=EVFILT_USER, flags=0x21<EV_ADD|EV_CLEAR>, fflags=0, data=0, udata=0x0 } }
+  8049 nginx    0.000257 STRU  struct kevent[] = {  }
+  8049 nginx    0.000260 RET   kevent 0
+  8049 nginx    0.000294 CALL  mmap(0,0x9000,0x3<PROT_READ|PROT_WRITE>,0x1002<MAP_PRIVATE|MAP_ANON>,0xffffffff,0)
+  8049 nginx    0.000300 RET   mmap 34379468800/0x8012d1000
+  8049 nginx    0.000313 CALL  mmap(0,0x9000,0x3<PROT_READ|PROT_WRITE>,0x1002<MAP_PRIVATE|MAP_ANON>,0xffffffff,0)
+  8049 nginx    0.000317 RET   mmap 34379505664/0x8012da000
+  8049 nginx    0.000322 CALL  mmap(0,0x41000,0x3<PROT_READ|PROT_WRITE>,0x1002<MAP_PRIVATE|MAP_ANON>,0xffffffff,0)
+  8049 nginx    0.000327 RET   mmap 34379542528/0x8012e3000
+  8049 nginx    0.000341 CALL  mmap(0,0x1d000,0x3<PROT_READ|PROT_WRITE>,0x1002<MAP_PRIVATE|MAP_ANON>,0xffffffff,0)
+  8049 nginx    0.000345 RET   mmap 34379808768/0x801324000
+  8049 nginx    0.000382 CALL  mmap(0,0x1d000,0x3<PROT_READ|PROT_WRITE>,0x1002<MAP_PRIVATE|MAP_ANON>,0xffffffff,0)
+  8049 nginx    0.000386 RET   mmap 34379927552/0x801341000
+  8049 nginx    0.000509 CALL  close(0x5)
+  8049 nginx    0.000513 RET   close 0
+  8049 nginx    0.000541 CALL  getpid
+  8049 nginx    0.000545 RET   getpid 8049/0x1f71
+  8049 nginx    0.000549 CALL  __sysctl(0x7fffffffe5b0,0x4,0,0,0x801225000,0x16)
+  8049 nginx    0.000556 SCTL  "kern.proc.args.8049"
+  8049 nginx    0.000560 RET   __sysctl 0
+  8049 nginx    0.000564 CALL  kevent(0x7,0x8012d1b40,0x2,0x8012da040,0x200,0)
+  8049 nginx    0.000577 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0x5<EV_ADD|EV_ENABLE>, fflags=0, data=0, udata=0x801324d80 }
+             { ident=6, filter=EVFILT_READ, flags=0x5<EV_ADD|EV_ENABLE>, fflags=0, data=0, udata=0x801324de8 } }
+  8049 nginx    1.028047 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0, fflags=0, data=0x1, udata=0x801324d80 } }
+  8049 nginx    1.028072 RET   kevent 1
+  8049 nginx    1.028116 CALL  accept4(0x4,0x7fffffffe4e0,0x7fffffffe4dc,0x20000000)
+  8049 nginx    1.028174 STRU  struct sockaddr { AF_INET, 127.0.1.132:13184 }
+  8049 nginx    1.028178 RET   accept4 5
+  8049 nginx    1.028195 CALL  kevent(0x7,0x8012d1b40,0x1,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.028199 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801324e50 } }
+  8049 nginx    1.028205 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x20<EV_CLEAR>, fflags=0, data=0x4e, udata=0x801324e50 } }
+  8049 nginx    1.028218 RET   kevent 1
+  8049 nginx    1.028229 CALL  recvfrom(0x5,0x801221000,0x400,0,0,0)
+  8049 nginx    1.028240 GIO   fd 5 read 78 bytes
+       "GET / HTTP/1.1\r
+	Host: localhost:8080\r
+	User-Agent: curl/7.59.0\r
+	Accept: */*\r
+	\r
+       "
+  8049 nginx    1.028243 RET   recvfrom 78/0x4e
+  8049 nginx    1.028289 CALL  socket(PF_INET,0x1<SOCK_STREAM>,IPPROTO_IP)
+  8049 nginx    1.028306 RET   socket 8
+  8049 nginx    1.028311 CALL  ioctl(0x8,FIONBIO,0x7fffffffe12c)
+  8049 nginx    1.028315 RET   ioctl 0
+  8049 nginx    1.028323 CALL  connect(0x8,0x8012956c8,0x10)
+  8049 nginx    1.028327 STRU  struct sockaddr { AF_INET, 127.0.0.1:8081 }
+  8049 nginx    1.028341 RET   connect -1 errno 36 Operation now in progress
+  8049 nginx    1.028351 CALL  kevent(0x7,0x8012d1b40,0x3,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.028364 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801341f10 }
+             { ident=8, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801324eb8 }
+             { ident=8, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801341f78 } }
+  8049 nginx    1.028370 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f10 }
+             { ident=8, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f78 } }
+  8049 nginx    1.028382 RET   kevent 2
+  8049 nginx    1.028392 CALL  writev(0x8,0x7fffffffdb90,0x1)
+  8049 nginx    1.028400 GIO   fd 8 wrote 97 bytes
+       "GET / HTTP/1.0\r
+	Host: localhost:8081\r
+	Connection: close\r
+	User-Agent: curl/7.59.0\r
+	Accept: */*\r
+	\r
+       "
+  8049 nginx    1.028404 RET   writev 97/0x61
+  8049 nginx    1.028408 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.028421 STRU  struct kevent[] = {  }
+  8049 nginx    1.134140 STRU  struct kevent[] = { { ident=8, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f78 } }
+  8049 nginx    1.134166 RET   kevent 1
+  8049 nginx    1.134176 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.134181 STRU  struct kevent[] = {  }
+  8049 nginx    1.560150 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0x32, udata=0x801324eb8 } }
+  8049 nginx    1.560172 RET   kevent 1
+  8049 nginx    1.560190 CALL  recvfrom(0x8,0x80122f000,0x1000,0,0,0)
+  8049 nginx    1.560204 GIO   fd 8 read 50 bytes
+       "HTTP/1.1 200 OK\r
+	Content-type: text/plain\r
+	\r
+	OK\r
+	\0"
+  8049 nginx    1.560208 RET   recvfrom 50/0x32
+  8049 nginx    1.560240 CALL  close(0x8)
+  8049 nginx    1.560274 RET   close 0
+  8049 nginx    1.560283 CALL  writev(0x5,0x7fffffffd660,0x5)
+  8049 nginx    1.560292 GIO   fd 5 wrote 171 bytes
+       "HTTP/1.1 200 OK\r
+	Server: nginx/1.14.0\r
+	Date: Fri, 12 Oct 2018 20:03:42 GMT\r
+	Content-Type: text/plain\r
+	Transfer-Encoding: chunked\r
+	Connection: keep-alive\r
+	\r
+	5\r
+	OK\r
+	\0\r
+	0\r
+	\r
+       "
+  8049 nginx    1.560295 RET   writev 171/0xab
+  8049 nginx    1.560316 CALL  setsockopt(0x5,IPPROTO_TCP,TCP_NODELAY,0x7fffffffe484,0x4)
+  8049 nginx    1.560321 RET   setsockopt 0
+  8049 nginx    1.560325 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.560329 STRU  struct kevent[] = {  }
+  8049 nginx    1.560386 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f10 }
+             { ident=5, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0, udata=0x801324e50 } }
+  8049 nginx    1.560399 RET   kevent 2
+  8049 nginx    1.560405 CALL  close(0x5)
+  8049 nginx    1.560411 RET   close 0
+  8049 nginx    1.560415 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0)
+  8049 nginx    1.560418 STRU  struct kevent[] = {  }
+  8049 nginx    1.570441 STRU  struct kevent[] = { { ident=4, filter=EVFILT_READ, flags=0, fflags=0, data=0x1, udata=0x801324d80 } }
+  8049 nginx    1.570482 RET   kevent 1
+  8049 nginx    1.570494 CALL  accept4(0x4,0x7fffffffe4e0,0x7fffffffe4dc,0x20000000)
+  8049 nginx    1.570501 STRU  struct sockaddr { AF_INET, 127.0.1.132:31832 }
+  8049 nginx    1.570505 RET   accept4 5
+  8049 nginx    1.570516 CALL  kevent(0x7,0x8012d1b40,0x1,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.570536 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801324e51 } }
+  8049 nginx    1.570543 STRU  struct kevent[] = { { ident=5, filter=EVFILT_READ, flags=0x20<EV_CLEAR>, fflags=0, data=0x4e, udata=0x801324e51 } }
+  8049 nginx    1.570546 RET   kevent 1
+  8049 nginx    1.570553 CALL  recvfrom(0x5,0x801221000,0x400,0,0,0)
+  8049 nginx    1.570558 GIO   fd 5 read 78 bytes
+       "GET / HTTP/1.1\r
+	Host: localhost:8080\r
+	User-Agent: curl/7.59.0\r
+	Accept: */*\r
+	\r
+       "
+  8049 nginx    1.570574 RET   recvfrom 78/0x4e
+  8049 nginx    1.570593 CALL  socket(PF_INET6,0x1<SOCK_STREAM>,IPPROTO_IP)
+  8049 nginx    1.570601 RET   socket 8
+  8049 nginx    1.570605 CALL  ioctl(0x8,FIONBIO,0x7fffffffe12c)
+  8049 nginx    1.570609 RET   ioctl 0
+  8049 nginx    1.570613 CALL  connect(0x8,0x8012956f0,0x1c)
+  8049 nginx    1.570629 STRU  struct sockaddr { AF_INET6, [::1]:8081 }
+  8049 nginx    1.570645 RET   connect -1 errno 36 Operation now in progress
+  8049 nginx    1.570653 CALL  kevent(0x7,0x8012d1b40,0x3,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.570658 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801341f11 }
+             { ident=8, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801324eb9 }
+             { ident=8, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801341f79 } }
+  8049 nginx    1.570674 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f11 }
+             { ident=8, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=NOTE_LOWAT|0x3c, data=0, udata=0x801324eb9 }
+             { ident=8, filter=EVFILT_WRITE, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=NOTE_LOWAT|0x3c, data=0x8000, udata=0x801341f79 } }
+  8049 nginx    1.570678 RET   kevent 3
+  8049 nginx    1.570693 CALL  write(0x3,0x7fffffffdca0,0x105)
+  8049 nginx    1.570708 GIO   fd 3 wrote 261 bytes
+       "2018/10/12 20:03:42 [error] 8049#100830: *3 kevent() reported that connect() failed (61: Connection refused) while connecting to upstream, client: 127.0.1.132, server: localhost, request: "GET / HTTP/1.1", upstream: "http://[::1]:8081/", host: "localhost:\
+	8080"
+       "
+  8049 nginx    1.570712 RET   write 261/0x105
+  8049 nginx    1.570717 CALL  close(0x8)
+  8049 nginx    1.570725 RET   close 0
+  8049 nginx    1.570740 CALL  socket(PF_INET,0x1<SOCK_STREAM>,IPPROTO_IP)
+  8049 nginx    1.570745 RET   socket 8
+  8049 nginx    1.570749 CALL  ioctl(0x8,FIONBIO,0x7fffffffe4cc)
+  8049 nginx    1.570752 RET   ioctl 0
+  8049 nginx    1.570756 CALL  connect(0x8,0x8012956c8,0x10)
+  8049 nginx    1.570760 STRU  struct sockaddr { AF_INET, 127.0.0.1:8081 }
+  8049 nginx    1.570780 RET   connect -1 errno 36 Operation now in progress
+  8049 nginx    1.570785 CALL  kevent(0x7,0x8012d1b40,0x2,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.570788 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801324eb8 }
+             { ident=8, filter=EVFILT_WRITE, flags=0x25<EV_ADD|EV_ENABLE|EV_CLEAR>, fflags=0, data=0, udata=0x801341f78 } }
+  8049 nginx    1.570793 STRU  struct kevent[] = { { ident=8, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f78 } }
+  8049 nginx    1.570806 RET   kevent 1
+  8049 nginx    1.570812 CALL  writev(0x8,0x7fffffffdb90,0x1)
+  8049 nginx    1.570819 GIO   fd 8 wrote 97 bytes
+       "GET / HTTP/1.0\r
+	Host: localhost:8081\r
+	Connection: close\r
+	User-Agent: curl/7.59.0\r
+	Accept: */*\r
+	\r
+       "
+  8049 nginx    1.570823 RET   writev 97/0x61
+  8049 nginx    1.570827 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.570840 STRU  struct kevent[] = {  }
+  8049 nginx    1.673396 STRU  struct kevent[] = { { ident=8, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f78 } }
+  8049 nginx    1.673420 RET   kevent 1
+  8049 nginx    1.673433 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    1.673442 STRU  struct kevent[] = {  }
+  8049 nginx    3.081164 STRU  struct kevent[] = { { ident=8, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0x32, udata=0x801324eb8 } }
+  8049 nginx    3.081250 RET   kevent 1
+  8049 nginx    3.081272 CALL  recvfrom(0x8,0x80122c000,0x1000,0,0,0)
+  8049 nginx    3.081281 GIO   fd 8 read 50 bytes
+       "HTTP/1.1 200 OK\r
+	Content-type: text/plain\r
+	\r
+	OK\r
+	\0"
+  8049 nginx    3.081285 RET   recvfrom 50/0x32
+  8049 nginx    3.081309 CALL  close(0x8)
+  8049 nginx    3.081320 RET   close 0
+  8049 nginx    3.081329 CALL  writev(0x5,0x7fffffffd660,0x5)
+  8049 nginx    3.081342 GIO   fd 5 wrote 171 bytes
+       "HTTP/1.1 200 OK\r
+	Server: nginx/1.14.0\r
+	Date: Fri, 12 Oct 2018 20:03:43 GMT\r
+	Content-Type: text/plain\r
+	Transfer-Encoding: chunked\r
+	Connection: keep-alive\r
+	\r
+	5\r
+	OK\r
+	\0\r
+	0\r
+	\r
+       "
+  8049 nginx    3.081348 RET   writev 171/0xab
+  8049 nginx    3.081356 CALL  setsockopt(0x5,IPPROTO_TCP,TCP_NODELAY,0x7fffffffe484,0x4)
+  8049 nginx    3.081362 RET   setsockopt 0
+  8049 nginx    3.081367 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0x7fffffffe598)
+  8049 nginx    3.081371 STRU  struct kevent[] = {  }
+  8049 nginx    3.081492 STRU  struct kevent[] = { { ident=5, filter=EVFILT_WRITE, flags=0x20<EV_CLEAR>, fflags=0, data=0xbf88, udata=0x801341f11 }
+             { ident=5, filter=EVFILT_READ, flags=0x8020<EV_CLEAR|EV_EOF>, fflags=0, data=0, udata=0x801324e51 } }
+  8049 nginx    3.081498 RET   kevent 2
+  8049 nginx    3.081504 CALL  close(0x5)
+  8049 nginx    3.081512 RET   close 0
+  8049 nginx    3.081519 CALL  kevent(0x7,0x8012d1b40,0,0x8012da040,0x200,0)
+  8049 nginx    3.081524 STRU  struct kevent[] = {  }
+  8049 nginx    3.082774 STRU  struct kevent[] = { { ident=6, filter=EVFILT_READ, flags=0, fflags=0, data=0x20, udata=0x801324de8 } }
+  8049 nginx    3.082795 RET   kevent 1
+  8049 nginx    3.082814 CALL  recvmsg(0x6,0x7fffffffe4b0,0)
+  8049 nginx    3.082857 GIO   fd 6 read 32 bytes
+       0x0000 0400 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 ffff ffff 0000 0000                                                                                                 |................................|
+
+  8049 nginx    3.082862 RET   recvmsg 32/0x20
+  8049 nginx    3.082866 CALL  recvmsg(0x6,0x7fffffffe4b0,0)
+  8049 nginx    3.082870 RET   recvmsg -1 errno 35 Resource temporarily unavailable
+  8049 nginx    3.083044 CALL  exit(0)
