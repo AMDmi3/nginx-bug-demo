@@ -30,6 +30,8 @@ int main() {
 	if (listen(s, 4) < 0)
 		err(1, "listen");
 
+    int nreq = 0;
+
 	char buf[65536];
 	while (1) {
 		int s2 = accept(s, NULL, NULL);
@@ -39,12 +41,14 @@ int main() {
 		if (recv(s2, buf, 65536, 0) < 0)
 			err(1, "recv");
 
-		usleep(1500000); // 1.5 sec
+		usleep(1000000 * (nreq & 1) + 500000); // 0.5 sec - 1.5 sec - 0.5 sec - 1.5 sec ...
 
 		if (send(s2, reply, sizeof(reply), 0) < 0)
 			err(1, "send");
 
 		close(s2);
+
+        nreq++;
 	}
 
 	return 0;

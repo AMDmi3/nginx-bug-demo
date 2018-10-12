@@ -24,10 +24,15 @@ kill -0 "$nginx_pid" >/dev/null 2>&1 || { echo "nginx seem to have failed to sta
 
 echo "===> Trying request"
 
+echo "/!\\ First request: backend replies in 0.5 seconds"
+
 time curl --silent http://localhost:8080 >/dev/null
 
-echo "/!\\ The backend replies in 1.5 seconds"
-echo "/!\\ If you see times > 2 seconds here, you're experiencing nginx problem"
+echo "/!\\ Second request: backend replies in 1.5 seconds"
+
+time curl --silent http://localhost:8080 >/dev/null
+
+echo "/!\\ If you're seeing more than 2 seconds here, you're experiencing nginx problem"
 
 echo "===> Shutting everything down"
 
