@@ -42,6 +42,16 @@ In practice, however, this happens:
 
 Note that the second response comes with 2.23 seconds instead of expected 1.52 or so.
 
+## ktrace dumps
+
+See ktrace dumps [with bug](ktrace.11.2-bug.txt) [without bug](ktrace.12.x-ok.txt).
+
+The relevant difference is how kevent behaves after nginx sends the reply back to client:
+
+Bug: https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.11.2-bug.txt#L241-L249
+
+No bug: https://github.com/AMDmi3/nginx-bug-demo/blob/master/ktrace.12.x-ok.txt#L226-L227
+
 ## Enviroment
 
 - OS
